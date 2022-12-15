@@ -130,7 +130,7 @@ const loading = ref(false);
 const messageDialog = ref();
 const open = ref(false);
 // const url = "http://localhost:8088";
-const url = "https://api-websepxe.vercel.app/";
+const url = "https://api-websepxe.vercel.app";
 
 const { data: teams } = await useFetch(`${url}/api/team`);
 const { data: users } = await useFetch(`${url}/api/users`);
