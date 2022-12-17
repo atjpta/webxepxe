@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-xl">
     <!-- thông báo -->
 
     <div
@@ -15,13 +15,12 @@
       </div>
     </div>
     <div class="z-0" :class="[open ? 'blur-lg' : '']">
-      <header>
-        <h1 class="font-bold">SẮP XE XUÂN YÊU THƯƠNG 2022</h1>
-      </header>
-
       <!-- chọn ban -->
       <div class="mx-auto w-4/5 m-5">
-        <select v-model="selectTeam1" class="select select-primary w-full max-w-xs">
+        <select
+          v-model="selectTeam1"
+          class="text-xl select select-primary w-full max-w-xs"
+        >
           <option value=" " disabled selected>Chọn ban của bạn</option>
           <option :value="team.id" v-for="team in teams" :key="team.id">
             {{ team.name }}
@@ -31,13 +30,16 @@
 
       <!-- chọn tên -->
       <div v-show="selectTeam1 == ' '" class="mx-auto w-4/5 m-5">
-        <select disabled class="select select-primary w-full max-w-xs">
+        <select disabled class="text-xl select select-primary w-full max-w-xs">
           <option disabled selected>Chọn tên của bạn</option>
         </select>
       </div>
 
       <div v-show="selectTeam1 != ' '" class="mx-auto w-4/5 m-5">
-        <select v-model="selectUser1" class="select select-primary w-full max-w-xs">
+        <select
+          v-model="selectUser1"
+          class="text-xl select select-primary w-full max-w-xs"
+        >
           <option value=" " disabled selected>Chọn ban của bạn</option>
           <option :value="user.id" v-for="user in listUser1" :key="user.name">
             {{ user.name }}
@@ -52,7 +54,7 @@
           <div class="font-medium m-1">{{ data.title }}</div>
           <div class="form-control">
             <label class="label cursor-pointer">
-              <span class="label-text">{{ data.value1 }}</span>
+              <span class="label-text text-xl">{{ data.value1 }}</span>
               <input
                 value="1"
                 v-model="data.selectValue"
@@ -64,7 +66,7 @@
           </div>
           <div class="form-control">
             <label class="label cursor-pointer">
-              <span class="label-text">{{ data.value2 }}</span>
+              <span class="label-text text-xl">{{ data.value2 }}</span>
               <input
                 value="2"
                 v-model="data.selectValue"
@@ -82,7 +84,10 @@
       <transition name="bounce">
         <div v-if="dataSelect[5].selectValue == 1">
           <div class="mx-auto w-4/5 m-5">
-            <select v-model="selectTeam2" class="select select-primary w-full max-w-xs">
+            <select
+              v-model="selectTeam2"
+              class="text-xl select select-primary w-full max-w-xs"
+            >
               <option value=" " disabled selected>
                 Chọn ban của người đi chung với bạn
               </option>
@@ -94,13 +99,16 @@
 
           <!-- chọn tên -->
           <div v-show="selectTeam2 == ' '" class="mx-auto w-4/5 m-5">
-            <select disabled class="select select-primary w-full max-w-xs">
+            <select disabled class="text-xl select select-primary w-full max-w-xs">
               <option disabled selected>Chọn tên của người đi chung với bạn</option>
             </select>
           </div>
 
           <div v-show="selectTeam2 != ' '" class="mx-auto w-4/5 m-5">
-            <select v-model="selectUser2" class="select select-primary w-full max-w-xs">
+            <select
+              v-model="selectUser2"
+              class="text-xl select select-primary w-full max-w-xs"
+            >
               <option value=" " disabled selected>
                 Chọn tên của người đi chung với bạn
               </option>
@@ -254,17 +262,6 @@ async function dk() {
 </script>
 
 <style scoped>
-header {
-  background-image: url("../asset/image/317641038_6374923505855862_4793296601509338930_n.jpg");
-}
-header H1 {
-  font-size: 60px;
-  text-align: center;
-  color: yellow;
-  text-shadow: 0.1em 0.1em #333;
-  font-family: "Times New Roman", Times, serif;
-}
-
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
